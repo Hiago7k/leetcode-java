@@ -1,25 +1,22 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class BestTimeToBytAndSellStock {
     static void main() {
-       int nums[] = {7, 2, 5, 3, 6, 4};
-       int sell = 0;
+       int prices[] = {7,1,5,0,6,4};
        int lower = 0;
-       int higher = 0;
-       int numsSaved = 0;
+       int atual = 0;
+       int j = 0;
 
-       for(var i = 0; i <= nums.length -1; i++){
-           System.out.println(nums[i]);
+       for (int i = 0; i <= prices.length -1; i++){
+            atual = prices[i];
+            lower = prices[j+1];
 
-           for(int j = i + 1; j<= nums.length -1; j++){
-               numsSaved = numsSaved + nums[i];
+            if(atual <= lower){
+                lower = lower =  atual;
+            }
 
-               if(nums[j] <= nums[i]){
-                   lower = lower = nums[i];
-               }
-           }
        }
-        System.out.println(numsSaved);
         System.out.println(lower);
     }
 }
